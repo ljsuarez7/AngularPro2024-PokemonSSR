@@ -1,5 +1,9 @@
 <div
-  class="bg-blue-500 animate-fadeIn h-44 bg-opacity-25 rounded-lg shadow-md flex flex-col p-4 items-center justify-center cursor-pointer">
+  class="relative bg-blue-500 animate-fadeIn h-44 bg-opacity-25 rounded-lg shadow-md flex flex-col p-4 items-center justify-center cursor-pointer">
+
+  <div class="absolute top-0 left-0 ml-2">
+    <h2 class="text font-bold capitalize text-white">#{{pokemon().id}}</h2>
+  </div>
 
   <img class="w-24 h-24" width="96px" height="96px" [src]="pokemonImage()" [alt]="pokemon().name + ' image'">
 
