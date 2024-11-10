@@ -85,11 +85,9 @@ export default class PokemonsPageComponent {
   //Versión con segmento de pagina http://localhost:4200/pokemons/page/1
   public loadPokemons(page = 0) {
 
-    const pageToLoad = page;
-
-    this.pokemonsService.loadPage(pageToLoad)
+    this.pokemonsService.loadPage(page)
       .pipe(
-        tap(() => this.title.setTitle(`PokemonSsr - Page ${pageToLoad}`)),
+        tap(() => this.title.setTitle(`PokemonSsr - Page ${page}`)),
       )
       .subscribe(pokemons => {
         this.pokemons.set(pokemons);
