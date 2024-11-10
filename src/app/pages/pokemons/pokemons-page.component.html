@@ -9,7 +9,14 @@
 <pokemon-list-skeleton />
 }
 
-<div class="flex justify-between">
+<!-- Versión con query parameters http://localhost:4200/pokemons?page=1 -->
+<!-- <div class="flex justify-between">
   <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
   <button (click)="loadPokemons(+1)" class="mt-2">Siguientes</button>
+</div> -->
+
+<!-- Versión con segmento de pagina http://localhost:4200/pokemons/page/1 -->
+<div class="flex justify-between">
+  <button class="mt-2" [routerLink]="['/pokemons/page', currentPage()! - 1]" [disabled]="currentPage() === 1" >Anteriores</button>
+  <button class="mt-2" [routerLink]="['/pokemons/page', currentPage()! + 1]">Siguientes</button>
 </div>
